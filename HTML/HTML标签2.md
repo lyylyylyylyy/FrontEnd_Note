@@ -310,11 +310,9 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 - 属性同`<td>`标签。
 
 <br>
-### `<caption>`：表格的标题。使用时和`tr`标签并列
- - 属性：`align`，表示标题相对于表格的位置。属性取值可以是：left、center、right、top、bottom
-效果：
 
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_16.png)
+`<caption>` ：表格的标题。使用时和`tr`标签并列
+ - 属性：`align`，表示标题相对于表格的位置。属性取值可以是：left、center、right、top、bottom
 
 ### 表格的`<thead>`标签、`<tbody>`标签、`<tfoot>`标签
 
@@ -322,49 +320,8 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 
 - 1、如果写了，那么这三个部分的**代码顺序可以任意**，浏览器显示的时候还是按照thead、tbody、tfoot的顺序依次来显示内容。如果不写thead、tbody、tfoot，那么浏览器解析并显示表格内容的时候是从按照代码的从上到下的顺序来显示。
 - 2、当表格非常大内容非常多的时候，如果用thead、tbody、tfoot标签的话，那么**数据可以边获取边显示**。如果不写，则必须等表格的内容全部从服务器获取完成才能显示出来。
-
-举例：
-
-```html
- <body>
-
-	<table border="1">
-
-		<tbody>
-		<tr>
-			<td>生命壹号</td>
-			<td>23</td>
-			<td>男</td>
-			<td>黄冈</td>
-		</tr>
-		</tbody>
-
-		<tfoot>
-		<tr>
-			<td>许嵩</td>
-			<td>29</td>
-			<td>男</td>
-			<td>安徽</td>
-		</tr>
-		</tfoot>
-
-		<thead>
-		<tr>
-			<td>邓紫棋</td>
-			<td>23</td>
-			<td>女</td>
-			<td>香港</td>
-		</tr>
-		</thead>
-
-	</table>
-
- </body>
-```
-
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_17.png)
+  
+<br>
 
 ## 框架标签
 
@@ -392,14 +349,6 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 
 注：如果你想将框架分成很多列，在属性值里用逗号隔开就行了。
 
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_26.png)
-
-上图中，如果删掉页面right.html，显示效果如下：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_27.png)
-
 ### `<frame>`：框架
 
 一个框架显示一个页面。
@@ -416,7 +365,7 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 ```
 
 - `bordercolor="#00FF00"`：给框架的边框定义颜色。这个属性在框架集合`<frameset>`中同样适用。
-颜色这个属性在IE浏览器中生效，但是在google浏览器中无效，不知道为啥。
+颜色这个属性在IE浏览器中生效，但是在google浏览器中无效。
 
 - `frameborder="0"`或`frameborder="1"`：隐藏或显示边框（框架线）。
 
@@ -424,14 +373,7 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 
 利用`name`这个属性，我们可以在框架里进行超链。
 
-举例：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_28.png)
-
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_gif3.gif)
-
+<br>
 
 ## 内嵌框架
 
@@ -448,11 +390,7 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
  - `name="mainFrame"`：窗口名称。公有属性。
 
 
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_29.png)
-
-内嵌框架举例：（在内嵌页面中切换显示不同的压面）
+**内嵌框架举例：（在内嵌页面中切换显示不同的页面)**
 
 ```html
  <body>
@@ -463,15 +401,9 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
 
  	<iframe src="文字页面.html" width="400" height="400" name="myframe"></iframe>
  	<br>
- 	嘿嘿
-
  </body>
 
 ```
-
-效果演示：
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_GIF.gif)
-
 
 ## 表单标签
 
@@ -483,9 +415,9 @@ ol这个东西用的不多，如果想表达顺序，大家一般也用ul。举�
  - `action`：指定表单数据的处理程序，一般是PHP，如：action=“login.php”
  - `method`：表单数据的提交方式，一般取值：get(默认)和post
 
-注意：表单和表格嵌套时，是在<form>标记中套<table>标记。
+注意：表单和表格嵌套时，是在`<form>`标记中套`<table>`标记。
 
-form标签里面的action属性和method属性，在《Ajax》课程上给大家讲解。稍微说一下：action属性就是表示，表单将提交到哪里。 method属性表示用什么HTTP方法提交，有get、post两种。
+form标签里面的**action**属性和**method**属性，action属性就是表示，表单将提交到哪里。 method属性表示用什么HTTP方法提交，有get、post两种。
 
 **get提交和post提交的区别：**
 
@@ -638,11 +570,7 @@ select标签和ul、ol、dl一样，都是组标签。
 	</form>
 ```
 
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_32.png)
-
-### `<textare>`标签：多行文本输入框
+### `<textarea>`标签：多行文本输入框
 
 text就是“文本”，area就是“区域”。
 
@@ -663,13 +591,6 @@ text就是“文本”，area就是“区域”。
 ```
 
 上方代码解释：textarea这个标签，是个标签对儿。对儿里面不用写东西。如果写的话，就是这个框的默认文字。
-
-
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_34.png)
-
-上图的红框部分表示，我在文本区域进行了换行，所以显示的效果也出现了空白。
 
 
 
@@ -699,10 +620,6 @@ text就是“文本”，area就是“区域”。
 	</form>
 ```
 
-效果：
-
-
-![](http://img.smyhvae.com/20151002_36.png)
 
 ### `<label>`标签
 
@@ -783,13 +700,6 @@ Flash格式的视频兼容性非常好，Flash格式的文件很小。
  </body>
 
 ```
-IE 8中的运行效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_37.png)
-
-google浏览器中的运行效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_38.png)
 
 注：在HTML5中新增了`<video>`标签播放视频。
 <br>
@@ -832,61 +742,3 @@ google浏览器中的运行效果：
 ```html
 	<marquee behavior="alternate" direction="down"  width="300" height="200" bgcolor="#8c5dc1">我来了</marquee>
 ```
-
-效果：
-
-![](http://img.smyhvae.com/2015-10-02-cnblogs_html_04.gif)
-
-## html废弃标签介绍
-
-HTML现在只负责语义，而不负责样式。但是HTML一开始，连样式也包办了。这些样式的标签，都已经被废弃。
-
-2004年之前的东西：
-
-```html
-<font size="9" color="red">哈哈</font>
-```
-
-下面这些标签都是css钩子，而不是原意：
-
-```html
-	<b>加粗</b>
-	<u>下划线</u>
-	<i>倾斜</i>
-    <del>删除线</del>
-	<em>强调</em>
-	<strong>强调</strong>
-
-```
-
-这些标签，是有着浓厚的样式的作用，干涉了css的作用，所以HTML抛弃了他们。
-
-类似的还有水平线标签：
-
-```html
-<hr />
-```
-
-换行标签：
-
-```
-<br />
-```
-
-但是，网页中99.9999%需要换行的时候，是因为另起了一个段落，所以要用p，而不要用`<br />`。不到万不得已，不要用br标签。
-
-标准的div+css页面，只会用到种类很少的标签：
-
-```
-div  p  h1  span   a   img   ul   ol    dl    input
-```
-
-知道每个标签的特殊用法、属性。比如a标签，img的属性。
-
-## 我的公众号
-
-想学习<font color=#0000ff>**代码之外的技能**</font>？不妨关注我的微信公众号（千古壹号id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/cnblogs/%E7%94%9F%E5%91%BD%E5%9B%A2%E9%98%9F%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
