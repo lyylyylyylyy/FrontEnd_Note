@@ -2,42 +2,42 @@
 
 ## 1. HTML
 
-- <input type = 'checkbox' checked>[HTML标签1](./HTML/01HTML标签1.md)<br>
-- <input type = 'checkbox' checked>[HTML标签2](./HTML/02HTML标签2.md)<br>
-- <input type = 'checkbox' checked>[HTML5详解1](./HTML/03-HTML5(一).md)<br>
-- <input type = 'checkbox' checked>[HTML5详解2](./HTML/04-HTML5(二).md)<br>
-- <input type = 'checkbox' checked>[HTML5详解3](./HTML/05-HTML5(三).md)<br>
-- <input type = 'checkbox' checked>[HTML基础](./HTML/06-HTML基础回顾.md)<br>
+- [x] [HTML标签1](./HTML/01HTML标签1.md)<br>
+- [x] [HTML标签2](./HTML/02HTML标签2.md)<br>
+- [x] [HTML5详解1](./HTML/03-HTML5(一).md)<br>
+- [x] [HTML5详解2](./HTML/04-HTML5(二).md)<br>
+- [x] [HTML5详解3](./HTML/05-HTML5(三).md)<br>
+- [x] [HTML基础](./HTML/06-HTML基础回顾.md)<br>
 
 ## 2. CSS
 
-- <input type = 'checkbox' checked>[CSS属性：字体属性和文本属性](./CSS/01-CSS属性：字体属性和文本属性.md)<br>
-- <input type = 'checkbox' checked>[CSS属性：背景属性](./CSS/02-CSS属性：背景属性.md)<br>
-- <input type = 'checkbox' checked>[CSS样式表和选择器](./CSS/03-CSS样式表和选择器.md)<br>
-- <input type = 'checkbox'>CSS选择器：伪类<br>
-- <input type = 'checkbox'>CSS样式表的继承性和层叠性<br>
-- <input type = 'checkbox'>CSS盒模型详解<br>
-- <input type = 'checkbox'>浮动<br>
-- <input type = 'checkbox'>CSS属性：定位属性<br>
-- <input type = 'checkbox'>CSS3选择器详解<br>
-- <input type = 'checkbox'>CSS3属性详解<br>
-- <input type = 'checkbox'>CSS3属性详解：动画详解<br>
-- <input type = 'checkbox'>CSS3属性：Flex布局图文详解<br>
-- <input type = 'checkbox'>CSS3属性详解：Web字体<br>
-- <input type = 'checkbox'>Sass入门<br>
-- <input type = 'checkbox'>浏览器的兼容性问题<br>
-- <input type = 'checkbox'>CSS3的常见边框汇总<br>
-- <input type = 'checkbox'>others<br>
-- <input type = 'checkbox'>CSS中的非布局样式<br>
-- <input type = 'checkbox'>CSS布局<br>
-- <input type = 'checkbox'>网页设计和开发中，关于字体的常识<br>
-- <input type = 'checkbox'>元素水平垂直居中<br>
-- <input type = 'checkbox'>CSS的一些小知识<br>
+- [x] [CSS属性：字体属性和文本属性](./CSS/01-CSS属性：字体属性和文本属性.md)<br>
+- [x] [CSS属性：背景属性](./CSS/02-CSS属性：背景属性.md)<br>
+- [x] [CSS样式表和选择器](./CSS/03-CSS样式表和选择器.md)<br>
+- [x] [CSS选择器：伪类](./CSS/04-CSS选择器：伪类.md)<br>
+- [ ] CSS样式表的继承性和层叠性<br>
+- [ ] CSS盒模型详解<br>
+- [ ] 浮动<br>
+- [ ] CSS属性：定位属性<br>
+- [ ] CSS3选择器详解<br>
+- [ ] CSS3属性详解<br>
+- [ ] CSS3属性详解：动画详解<br>
+- [ ] CSS3属性：Flex布局图文详解<br>
+- [ ] CSS3属性详解：Web字体<br>
+- [ ] Sass入门<br>
+- [ ] 浏览器的兼容性问题<br>
+- [ ] CSS3的常见边框汇总<br>
+- [ ] others<br>
+- [ ] CSS中的非布局样式<br>
+- [ ] CSS布局<br>
+- [ ] 网页设计和开发中，关于字体的常识<br>
+- [ ] 元素水平垂直居中<br>
+- [ ] CSS的一些小知识<br>
 
 ## JavaScript
 
-- <input type = 'checkbox'>JS简介<br>
-- <input type = 'checkbox'>变量<br>
+- [ ] JS简介<br>
+- [ ] 变量<br>
 
 ## DOM
 <br>
