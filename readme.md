@@ -8,6 +8,7 @@
 - [x] [HTML5详解2](./HTML/04-HTML5(二).md)<br>
 - [x] [HTML5详解3](./HTML/05-HTML5(三).md)<br>
 - [x] [HTML基础](./HTML/06-HTML基础回顾.md)<br>
+- [x] [DOM](./HTML/07-DOM.md)<br>
 
 ## 2. CSS
 
