@@ -71,12 +71,15 @@
 - [x] [BOM简介和navigator.userAgent&History&Location](./JavaScript/35-BOM简介和navigator.userAgent&History&Location.md)<br>
 - [x] [定时器](./JavaScript/36-定时器.md)<br>
 - [x] [BOM的常见内置方法和内置对象](./JavaScript/37-BOM的常见内置方法和内置对象.md)<br>
-- [x] [创建对象和继承](./JavaScript/38-创建对象和继承.md)<br>
-- [ ] [浅拷贝和深拷贝](./JavaScript/39-浅拷贝和深拷贝.md)<br>
-- [ ] [lazyload&防抖和节流](./JavaScript/40-lazyload&防抖和节流.md)<br>
-- [ ] [](./JavaScript/03-变量的数据类型.md)<br>
-- [ ] [](./JavaScript/03-变量的数据类型.md)<br>
-- [ ] [](./JavaScript/03-变量的数据类型.md)<br>
+- [x] [创建对象](./JavaScript/38-创建对象.md)<br>
+- [x] [浅拷贝和深拷贝](./JavaScript/39-浅拷贝和深拷贝.md)<br>
+- [x] [lazyload&防抖和节流](./JavaScript/40-lazyload&防抖和节流.md)<br>
+- [x] [继承](./JavaScript/41-继承.md)<br>
+- [ ] [执行上下文](./JavaScript/42-执行上下文.md)<br>
+- [ ] [作用域链](./JavaScript/43-作用域链.md)<br>
+- [ ] [变量提升、函数提升](./JavaScript/44-变量提升、函数提升.md)<br>
+- [ ] [类数组对象](./JavaScript/45-类数组对象与arguments.md)<br>
+- [ ] [类数组对象与arguments](./JavaScript/03-变量的数据类型.md)<br>
 - [ ] [](./JavaScript/03-变量的数据类型.md)<br>
 
 ## DOM
@@ -261,10 +264,18 @@
 
 # 十二、面试题集锦
 
+
+- 计算机网络
+  - [ ] [DNS解析、TCP连接、HTTP](./interview/InternetNetwork/01-DNS解析、TCP连接、HTTP.md)<br>
+  
 - [ ] [前端面试(一)](./interview/01-前端面试题目.md)<br>
-- [ ] [计算机网络](./interview/02-计算机网络面试题.md)<br>
-- [ ] [页面性能优化](./interview/03-页面性能优化.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
+- 前端进阶
+  - [x] [页面性能优化](./interview/前端进阶/01-页面性能优化.md)<br>
+  - [x] [轮询、长轮询、长连接、websocket](./interview/前端进阶/02-轮询、长轮询、长连接、websocket.md)<br>
+  - [x] [性能监控平台是如何捕获错误](./interview/前端进阶/03-性能监控平台是如何捕获错误.md)<br>
+- JavaScript
+  - [x] [隐式类型转换](./interview/JavaScript/01-隐式类型转换.md)<br>
+  
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
