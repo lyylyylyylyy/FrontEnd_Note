@@ -132,6 +132,8 @@
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 
+> 摘自：https://es6.ruanyifeng.com/
+
 ## 模块化规范：AMD
 
 ## 模块化规范：CMD
