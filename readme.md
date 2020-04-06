@@ -92,25 +92,45 @@
 
 ## JS作用域与作用域链
 
-## JS原型与原型链
-
 ## JS闭包
 
 ## JS异步/事件循环机制
 
-## ES6新特性
+- [ ] [](./JS高级/01-ES6新特性.md)<br>
 
-- [x] [ES6新特性](./JS高级/01-ES6新特性.md)<br>
-- [x] [ES6：promise、async等](./JS高级/02-ES6：promise、async等.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
+## Cookie
+
+- [ ] [cookie](./JS高级/01-cookie.md)<br>
+
 ## ES7新特性
 
 ## 模块化规范：CommonJS
 
 ## 模块化规范：ES6
+
+- [x] [ES6新特性](./ES6/01-ES6新特性.md)<br>
+- [x] [ES6：promise、async等](./ES6/02-ES6：promise、async等.md)<br>
+- [x] [let和const](./ES6/03-let和const.md)<br>
+- [x] [变量的解构赋值](./ES6/04-变量的解构赋值.md)<br>
+- [ ] [字符串的扩展](./ES6/05-字符串的扩展.md)<br>
+- [ ] [字符串的新增方法](./ES6/06-字符串的新增方法.md)<br>
+- [ ] [正则的扩展](./ES6/07-正则的扩展.md)<br>
+- [ ] [数值的扩展](./ES6/08-数值的扩展.md)<br>
+- [x] [函数的扩展](./ES6/09-函数的扩展.md)<br>
+- [x] [数组的扩展](./ES6/10-数组的扩展.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [x] [Promise 对象](./ES6/17-Promise对象.md)<br>
+- [x] [Iterator 和 for...of 循环](./ES6/18-Iterator和for...of循环.md)<br>
+- [x] [Generator函数的语法](./ES6/19-Generator函数的语法.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 
 ## 模块化规范：AMD
 
@@ -259,6 +279,7 @@
 
 - [x] [计算机网络概述](./计算机网络/计算机网络概述.md)<br>
 - [x] [网络应用](./计算机网络/网络应用.md)<br>
+- [ ] [传输层](./计算机网络/传输层.md)<br>
 - [ ] [计算机网络面试题](./计算机网络/计算机网络面试题.md)<br>
 <br>
 
