@@ -112,10 +112,10 @@
 - [x] [ES6：promise、async等](./ES6/02-ES6：promise、async等.md)<br>
 - [x] [let和const](./ES6/03-let和const.md)<br>
 - [x] [变量的解构赋值](./ES6/04-变量的解构赋值.md)<br>
-- [ ] [字符串的扩展](./ES6/05-字符串的扩展.md)<br>
-- [ ] [字符串的新增方法](./ES6/06-字符串的新增方法.md)<br>
-- [ ] [正则的扩展](./ES6/07-正则的扩展.md)<br>
-- [ ] [数值的扩展](./ES6/08-数值的扩展.md)<br>
+- [x] [字符串的扩展](./ES6/05-字符串的扩展.md)<br>
+- [x] [字符串的新增方法](./ES6/06-字符串的新增方法.md)<br>
+- [x] [正则的扩展](./ES6/07-正则的扩展.md)<br>
+- [x] [数值的扩展](./ES6/08-数值的扩展.md)<br>
 - [x] [函数的扩展](./ES6/09-函数的扩展.md)<br>
 - [x] [数组的扩展](./ES6/10-数组的扩展.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
@@ -127,12 +127,12 @@
 - [x] [Promise 对象](./ES6/17-Promise对象.md)<br>
 - [x] [Iterator 和 for...of 循环](./ES6/18-Iterator和for...of循环.md)<br>
 - [x] [Generator函数的语法](./ES6/19-Generator函数的语法.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [Generator函数的异步应用](./ES6/20-Generator函数的异步应用.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 
-> 摘自：https://es6.ruanyifeng.com/
+> 摘自：https://es6.ruanyifeng.com/, 此内容仅作个人学习整理。
 
 ## 模块化规范：AMD
 
