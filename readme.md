@@ -118,8 +118,8 @@
 - [x] [数值的扩展](./ES6/08-数值的扩展.md)<br>
 - [x] [函数的扩展](./ES6/09-函数的扩展.md)<br>
 - [x] [数组的扩展](./ES6/10-数组的扩展.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [x] [对象的扩展](./ES6/11-对象的扩展.md)<br>
+- [x] [对象的新增方法](./ES6/12-对象的新增方法.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
