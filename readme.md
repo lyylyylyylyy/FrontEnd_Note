@@ -120,10 +120,10 @@
 - [x] [数组的扩展](./ES6/10-数组的扩展.md)<br>
 - [x] [对象的扩展](./ES6/11-对象的扩展.md)<br>
 - [x] [对象的新增方法](./ES6/12-对象的新增方法.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [x] [Symbol](./ES6/13-Symbol.md)<br>
+- [x] [Set 和 Map 数据结构](./ES6/14-Set和Map数据结构.md)<br>
+- [x] [Proxy](./ES6/15-Proxy.md)<br>
+- [x] [Reflect](./ES6/16-Reflect.md)<br>
 - [x] [Promise 对象](./ES6/17-Promise对象.md)<br>
 - [x] [Iterator 和 for...of 循环](./ES6/18-Iterator和for...of循环.md)<br>
 - [x] [Generator函数的语法](./ES6/19-Generator函数的语法.md)<br>
