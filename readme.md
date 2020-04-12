@@ -127,7 +127,15 @@
 - [x] [Promise 对象](./ES6/17-Promise对象.md)<br>
 - [x] [Iterator 和 for...of 循环](./ES6/18-Iterator和for...of循环.md)<br>
 - [x] [Generator函数的语法](./ES6/19-Generator函数的语法.md)<br>
-- [ ] [Generator函数的异步应用](./ES6/20-Generator函数的异步应用.md)<br>
+- [x] [Generator函数的异步应用](./ES6/20-Generator函数的异步应用.md)<br>
+- [x] [async 函数](./ES6/21-async函数.md)<br>
+- [x] [Class 的基本语法](./ES6/22-Class的基本语法.md)<br>
+- [x] [Class的继承](./ES6/23-Class的继承.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
