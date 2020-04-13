@@ -96,11 +96,12 @@
 
 ## JS异步/事件循环机制
 
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
+- [x] [事件循环](./JS高级/02-事件循环.md)<br>
+
 
 ## Cookie
 
-- [ ] [cookie](./JS高级/01-cookie.md)<br>
+- [x] [cookie...待续](./JS高级/01-cookie.md)<br>
 
 ## ES7新特性
 
