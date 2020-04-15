@@ -1,6 +1,6 @@
 ## 本文主要内容：
 
-CSS的定位属性有三种，分别是绝对定位、相对定位、固定定位。
+CSS的定位属性主要有三种，分别是绝对定位、相对定位、固定定位。
 
 ```
 	position: absolute;  <!-- 绝对定位 -->
@@ -8,6 +8,8 @@ CSS的定位属性有三种，分别是绝对定位、相对定位、固定定�
 	position: relative;  <!-- 相对定位 -->
 
 	position: fixed;     <!-- 固定定位 -->
+
+	position: sticky;    <!-- 粘性定位 -->
 
 ```
 
@@ -200,6 +202,14 @@ PS：负数表示相反的方向。
 
 需要注意的是，假设顶部导航条的高度是60px，那么，为了防止其他的内容被导航条覆盖，我们要给body标签设置60px的padding-top。
 
+## 粘性定位 sticky
+
+
+元素根据正常文档流进行定位，然后**相对它的最近滚动祖先（nearest scrolling ancestor）和 containing block** (最近块级祖先 nearest block-level ancestor)，包括table-related元素，基于top, right, bottom, 和 left的值进行偏移。**偏移值不会影响任何其他元素的位置**。
+
+**该值总是创建一个新的层叠上下文（stacking context）。注意，一个sticky元素会“固定”在离它最近的一个拥有“滚动机制”的祖先上**（当该祖先的overflow 是 hidden, scroll, auto, 或 overlay时），即便这个祖先不是真的滚动祖先。这个阻止了所有“sticky”行为（详情见Github issue on W3C CSSWG）。
+
+![](./img/sticky.gif)
 
 ### 5、z-index属性：
 
