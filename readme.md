@@ -32,7 +32,7 @@
 - [x] [display详解](./CSS/18-display详解.md)<br>
 
 
-## JavaScript
+## 3. JavaScript
 
 - [x] [JS简介](./JavaScript/01-JS简介.md)<br>
 - [x] [变量](./JavaScript/02-变量.md)<br>
@@ -82,10 +82,21 @@
 - [ ] [类数组对象与arguments](./JavaScript/03-变量的数据类型.md)<br>
 - [ ] [](./JavaScript/03-变量的数据类型.md)<br>
 
-## DOM
+## 4. DOM
+
+- [x] [JavaScriptWindow-浏览器对象模型](./BOM/01-JavaScriptWindow-浏览器对象模型.md)<br>
+- [x] [JavaScriptWindowScreen](./BOM/02-JavaScriptWindowScreen.md)<br>
+- [x] [JavaScriptWindowLocation](./BOM/03-JavaScriptWindowLocation.md)<br>
+- [x] [WindowHistory](./BOM/04-WindowHistory.md)<br>
+- [x] [WindowNavigator](./BOM/05-WindowNavigator.md)<br>
+- [x] [JavaScript弹出框](./BOM/06-JavaScript弹出框.md)<br>
+- [x] [Timing事件](./BOM/07-Timing事件.md)<br>
+- [x] [JavaScript-Cookies](./BOM/08-JavaScript-Cookies.md)<br>
+
 <br>
 
-## BOM
+## 5. BOM
+
 <br>
 
 # 二、JS高级
@@ -132,8 +143,8 @@
 - [x] [async 函数](./ES6/21-async函数.md)<br>
 - [x] [Class 的基本语法](./ES6/22-Class的基本语法.md)<br>
 - [x] [Class的继承](./ES6/23-Class的继承.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [x] [Module的语法](./ES6/24-Module的语法.md)<br>
+- [x] [Module的加载实现](./ES6/25-Module的加载实现.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
@@ -290,7 +301,8 @@
 
 - [x] [计算机网络概述](./计算机网络/计算机网络概述.md)<br>
 - [x] [网络应用](./计算机网络/网络应用.md)<br>
-- [ ] [传输层](./计算机网络/传输层.md)<br>
+- [x] [传输层](./计算机网络/传输层.md)<br>
+- [ ] [网络层](./计算机网络/网络层.md)<br>
 - [ ] [计算机网络面试题](./计算机网络/计算机网络面试题.md)<br>
 <br>
 
