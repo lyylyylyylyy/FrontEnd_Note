@@ -79,7 +79,7 @@
 - [ ] [作用域链](./JavaScript/43-作用域链.md)<br>
 - [ ] [变量提升、函数提升](./JavaScript/44-变量提升、函数提升.md)<br>
 - [ ] [类数组对象](./JavaScript/45-类数组对象与arguments.md)<br>
-- [ ] [类数组对象与arguments](./JavaScript/03-变量的数据类型.md)<br>
+- [x] [脚本化HTTP](./JavaScript/46-脚本化HTTP.md)<br>
 - [ ] [](./JavaScript/03-变量的数据类型.md)<br>
 
 ## 4. DOM
