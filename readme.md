@@ -30,6 +30,8 @@
 - [x] [CSS中的非布局样式](./CSS/16-CSS中的非布局样式.md)<br>
 - [x] [CSS布局](./CSS/17-CSS布局.md)<br>
 - [x] [display详解](./CSS/18-display详解.md)<br>
+- [x] [栏式布局](./CSS/20-栏式布局.md)<br>
+- [x] [水平垂直居中](./CSS/19-水平垂直居中.md)<br>
 
 
 ## 3. JavaScript
@@ -210,6 +212,9 @@
 
 ## react
 
+- [ ] [虚拟DOM](./React/01-虚拟DOM.md)<br>
+
+
 ## react-router
 
 ## redux
@@ -328,15 +333,27 @@
 
 - 计算机网络
   - [ ] [DNS解析、TCP连接、HTTP](./interview/InternetNetwork/01-DNS解析、TCP连接、HTTP.md)<br>
+  - [x] [HTTP1.0和HTTP2.0的区别](./interview/InternetNetwork/02-http1.0和http2.0的区别.md)<br>
+
+
+
+
+
+
   
 - [ ] [前端面试(一)](./interview/01-前端面试题目.md)<br>
+
+
 - 前端进阶
   - [x] [页面性能优化](./interview/前端进阶/01-页面性能优化.md)<br>
   - [x] [轮询、长轮询、长连接、websocket](./interview/前端进阶/02-轮询、长轮询、长连接、websocket.md)<br>
   - [x] [性能监控平台是如何捕获错误](./interview/前端进阶/03-性能监控平台是如何捕获错误.md)<br>
+
+
+
 - JavaScript
   - [x] [隐式类型转换](./interview/JavaScript/01-隐式类型转换.md)<br>
-  
+ 
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
 - [ ] [](./JS高级/01-ES6新特性.md)<br>
