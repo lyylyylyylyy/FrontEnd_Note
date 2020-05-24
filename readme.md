@@ -213,6 +213,13 @@
 ## react
 
 - [ ] [虚拟DOM](./React/01-虚拟DOM.md)<br>
+- [x] [JSX简介](./React/02-JSX简介.md)<br>
+- [x] [元素渲染&组件&props](./React/03-元素渲染&组件&props.md)<br>
+- [x] [State&生命周期](./React/01-虚拟DOM.md)<br>
+- [ ] [](./React/01-虚拟DOM.md)<br>
+- [ ] [](./React/01-虚拟DOM.md)<br>
+- [ ] [](./React/01-虚拟DOM.md)<br>
+- [ ] [](./React/01-虚拟DOM.md)<br>
 
 
 ## react-router
