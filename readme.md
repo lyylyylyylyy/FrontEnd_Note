@@ -74,7 +74,7 @@
 - [x] [定时器](./JavaScript/36-定时器.md)<br>
 - [x] [BOM的常见内置方法和内置对象](./JavaScript/37-BOM的常见内置方法和内置对象.md)<br>
 - [x] [创建对象](./JavaScript/38-创建对象.md)<br>
-- [x] [浅拷贝和深拷贝](./JavaScript/39-浅拷贝和深拷贝.md)<br>
+- [ ] [浅拷贝和深拷贝](./JavaScript/39-浅拷贝和深拷贝.md)<br>
 - [x] [lazyload&防抖和节流](./JavaScript/40-lazyload&防抖和节流.md)<br>
 - [x] [继承](./JavaScript/41-继承.md)<br>
 - [ ] [执行上下文](./JavaScript/42-执行上下文.md)<br>
@@ -118,7 +118,9 @@
 
 ## ES7新特性
 
-## 模块化规范：CommonJS
+## node
+
+- [x] [模块机制](./node/模块机制.md)<br>
 
 ## 模块化规范：ES6
 

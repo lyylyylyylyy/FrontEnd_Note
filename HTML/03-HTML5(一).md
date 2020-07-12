@@ -531,7 +531,7 @@ HTML5通过`<video>`标签来解决视频播放的问题。
 
 - document.querySelector("selector") 通过CSS选择器获取符合条件的第一个元素。
 
-- document.querySelectorAll("selector")  通过CSS选择器获取符合条件的所有元素，以类数组形式存在。
+- document.querySelectorAll("selector")  通过CSS选择器获取符合条件的所有元素，以**类数组**形式存在。
 
 ### 类名操作
 

@@ -21,8 +21,8 @@
 - 将各个节点绘制到屏幕上。
 
 **注：** 
-- 文档解析完毕，页面重新渲染。当页面引用的所有 js 同步代码执行完毕，触发 `DOMContentLoaded `事件。
-- html 文档中的图片资源，js 代码中有异步加载的 css、js 、图片资源都加载完毕之后，`load` 事件触发。
+- 文档解析完毕，页面重新渲染。**当页面引用的所有 js 同步代码执行完毕，触发 `DOMContentLoaded `事件**。
+- html 文档中的图片资源，js 代码中有异步加载的 css、js 、图片**资源都加载完毕之后，`load` 事件触发**。
 
 > 需要明白，这五个步骤并不一定一次性顺序完成。如果 DOM 或 CSSOM 被修改，以上过程需要重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。实际页面中，CSS 与 JavaScript 往往会多次修改 DOM 和 CSSOM，下面就来看看它们的影响方式。
 
@@ -70,7 +70,7 @@ CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。
 <script src="app3.js" defer></script>
 ```
 
-`defer` 属性表示延迟执行引入的 JavaScript，不阻塞资源，而是会暂存到一个队列中，等整个html解析完成后再按队列的顺序请求并执行javascript，但是这种外联defer javascript全部加载并执行完成后才会派发`DOMContentLoaded事件`。
+`defer` 属性表示**延迟执行**引入的 JavaScript，不阻塞资源，而是会**暂存到一个队列中**，等整个html解析完成后再按队列的顺序请求并执行javascript，**但是这种外联defer javascript全部加载并执行完成后才会派发`DOMContentLoaded事件`。**
 
 **async**
 

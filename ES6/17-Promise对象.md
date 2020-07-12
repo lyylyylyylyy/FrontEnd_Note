@@ -30,7 +30,7 @@ Promise 是异步编程的一种解决方案，比传统的解决方案——**�
 
 > 注意，为了行文方便，本章后面的resolved统一只指fulfilled状态，不包含rejected状态。
 
-有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。
+有了Promise对象，就可以将异步操作以同步操作的流程表达出来，**避免了层层嵌套的回调函数(回调地狱)**。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。
 
 Promise也有一些缺点。首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。第三，当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
@@ -66,7 +66,7 @@ promise.then(function(value) {
 
 `then`方法可以接受**两个回调函数作为参数**。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
 
-Promise 新建后就会立即执行。
+**Promise 新建后就会立即执行。内部是同步的**
 
 ```
 let promise = new Promise(function(resolve, reject) {
@@ -85,7 +85,7 @@ console.log('Hi!');
 // resolved
 ```
 
-上面代码中，Promise 新建后立即执行，所以首先输出的是Promise。然后，then方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以resolved最后输出。
+上面代码中，Promise 新建后立即执行，所以首先输出的是Promise。然后，**then方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以resolved最后输出**。
 
 调用`resolve`或`reject`并不会终结 Promise 的参数函数的执行。
 ```
