@@ -176,7 +176,7 @@
 - [x] [第3章-基本概念](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [x] [基本类型和引用类型的值](./JavaScript高级程序设计/第4章-基本类型和引用类型的值.md)<br>
 - [x] [引用类型](./JavaScript高级程序设计/引用类型.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
+- [ ] [面向对象的程序设计](./JavaScript高级程序设计/面向对象的程序设计.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
@@ -236,6 +236,8 @@
 ## react服务器端渲染技术
 
 ## vue
+
+- [x] [vue中的组件通信方式](Vue/vue中的组件通信方式.md)<br>
 
 ## vue-router
 
