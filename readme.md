@@ -121,9 +121,13 @@
 ## node
 
 - [x] [模块机制](./node/模块机制.md)<br>
-- [x] [异步I/O](./node/模块机制.md)<br>
+- [x] [异步I/O](./node/异步IO.md)<br>
 - [x] [异步编程](./node/异步编程.md)<br>
 - [x] [内存控制](./node/内存控制.md)<br>
+- [x] [理解Buffer](./node/理解Buffe1.md)<br>
+- [x] [网络编程](./node/网络编程.md)<br>
+
+
 ## 模块化规范：ES6
 
 - [x] [ES6新特性](./ES6/01-ES6新特性.md)<br>
@@ -151,11 +155,11 @@
 - [x] [Class的继承](./ES6/23-Class的继承.md)<br>
 - [x] [Module的语法](./ES6/24-Module的语法.md)<br>
 - [x] [Module的加载实现](./ES6/25-Module的加载实现.md)<br>
+<!-- - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
 - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
+- [ ] [](./ES6/02-ES6：promise、async等.md)<br> -->
 
 
 > 摘自：https://es6.ruanyifeng.com/, 此内容仅作个人学习整理。
@@ -177,16 +181,16 @@
 - [x] [第3章-基本概念](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [x] [基本类型和引用类型的值](./JavaScript高级程序设计/第4章-基本类型和引用类型的值.md)<br>
 - [x] [引用类型](./JavaScript高级程序设计/引用类型.md)<br>
-- [ ] [面向对象的程序设计](./JavaScript高级程序设计/面向对象的程序设计.md)<br>
+- [x] [面向对象的程序设计](./JavaScript高级程序设计/BOM.md)<br>
+- [x] [函数表达式](./JavaScript高级程序设计/函数表达式.md)<br>
+- [x] [BOM](./JavaScript高级程序设计/第3章-基本概念.md)<br>
+<!-- - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
+- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br> -->
 
 
 # 四、前端核心高级
@@ -220,10 +224,10 @@
 - [x] [JSX简介](./React/02-JSX简介.md)<br>
 - [x] [元素渲染&组件&props](./React/03-元素渲染&组件&props.md)<br>
 - [x] [State&生命周期](./React/01-虚拟DOM.md)<br>
+<!-- - [ ] [](./React/01-虚拟DOM.md)<br>
 - [ ] [](./React/01-虚拟DOM.md)<br>
 - [ ] [](./React/01-虚拟DOM.md)<br>
-- [ ] [](./React/01-虚拟DOM.md)<br>
-- [ ] [](./React/01-虚拟DOM.md)<br>
+- [ ] [](./React/01-虚拟DOM.md)<br> -->
 
 
 ## react-router
