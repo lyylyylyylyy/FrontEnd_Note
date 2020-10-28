@@ -184,8 +184,8 @@
 - [x] [面向对象的程序设计](./JavaScript高级程序设计/BOM.md)<br>
 - [x] [函数表达式](./JavaScript高级程序设计/函数表达式.md)<br>
 - [x] [BOM](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-<!-- - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
+- [x] [客户端检测](./JavaScript高级程序设计/客户端检测.md)<br>
+<!-- - - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
