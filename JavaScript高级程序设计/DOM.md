@@ -237,3 +237,209 @@ alert(newNode == someNode.childNodes[someNode.childNodes.length-2]); //true
     </body>
 </html>
 ```
+
+### Element类型
+
+Element 类型用于表现XML或HTML 元素，提供了对元素标签名、子节点及特性的访问。Element节点具有以下特征:
+
+- nodeType 的值为 1;
+- nodeName 的值为元素的标签名;
+- nodeValue 的值为 null;
+- parentNode 可能是 Document 或 Element;
+- 其子节点可能是 Element、Text、Comment、ProcessingInstruction、CDATASection 或EntityReference。
+
+要访问元素的标签名，可以使用 nodeName 属性，也可以使用 tagName 属性;这两个属性会返回相同的值(使用后者主要是为了清晰起见)。
+
+1. HTML 元素
+
+添加的这些属性分别对应于每个HTML元素中都存在的下列标准特性，这些属性都可以用来取得或修改相应的特性值
+
+|    属性    |       用途     |
+|:---------:|:--------------:|
+|  id   |元素在文档中的唯一标识符|
+|  title   | 有关元素的附加说明信息，一般通过工具提示条显示出来|
+|  lang   |元素内容的语言代码，很少使用|
+|  dir   |语言的方向，值为"ltr"或"rtl"，也很少使用|
+|  className   |  与元素的 class 特性对应，即为元素指定的 CSS 类。没有将这个属性命名为 class|
+
+
+```javascript
+var div = document.getElementById("myDiv");//"myDiv""
+alert(div.id);  //"bd" 
+alert(div.className); //"Body text"
+alert(div.title); //"en"
+alert(div.lang); alert(div.dir);   //"ltr"
+```
+
+2. 操作特性
+
+操作特性的 DOM 方法主要有三个,这三个方法可以针对任何特性使用：
+
+`getAttribute()`
+
+有两类特殊的特性，它们虽然有对应的属性名，但属性的值与通过 `getAttribute()`返回的值并不相同。
+- `style`，用于通过 CSS 为元素指定样式。在通过 `getAttribute()`访问时，返回的 style 特性值中包含的是 CSS 文本，
+- 通过属性来访问它则会返回一个对象。
+- `onclick` 这样的事件处理程序。
+- 当在元素上使用时，`onclick` 特性中包含的是 JavaScript 代码，如果通过 `getAttribute()`访问，则会返回相应代码的字符串。
+- 而在访问 `onclick` 属性时，则会返回一个 JavaScript 函数(如果未在元素中指定相应特性，则返回 null)。
+- 在通过 JavaScript 以编程方式操作 DOM 时，开发人员经常不使用 `getAttribute()`，而是只使用对象的属性。
+
+---------------------------------------------------------------------------
+
+`setAttribute()`
+- 接受两个参数:要设置的特性名和值。
+- 如果特性已经存在，`setAttribute()`会以指定的值替换现有的值;
+- 如果特性不存在，`setAttribute()` 则创建该属性并设置相应的值。
+- 通过这个方法设置的 特性名会被统一转换为小写形式。
+
+---------------------------------------------------------------------------
+
+- `removeAttribute()`
+- 这个方法用于彻底删除元素的特性。调用这个方法不仅会清除特性的值，而且也会从元素中完全删除特性。
+
+3. attributes 属性
+
+Element 类型是使用 attributes 属性的唯一一个 DOM 节点类型。attributes 属性中包含一个`NamedNodeMap`，与 NodeList 类似，也是一个“动态”的集合。元素的每一个特性都由一个 Attr 节点表示，每个节点都保存在 `NamedNodeMap` 对象中。`NamedNodeMap` 对象拥有下列方法。
+- `getNamedItem(name)`:返回 nodeName 属性等于 name 的节点;
+- `removeNamedItem(name)`:从列表中移除 nodeName 属性等于 name 的节点; 
+- `setNamedItem(node)`:向列表中添加节点，以节点的 nodeName 属性为索引; 
+- `item(pos)`:返回位于数字 pos 位置处的节点。
+
+
+
+attributes 属性中包含一系列节点，每个节点的 nodeName 就是特性的名称，而节点的 nodeValue 就是特性的值。要取得元素的 id 特性，可以使用以下代码。
+`var id = element.attributes.getNamedItem("id").nodeValue;`
+`var id = element.attributes["id"].nodeValue;`
+`element.attributes["id"].nodeValue = "someOtherId";`
+
+4. 创建元素
+
+`document.createElement()`
+- 这个方法只接受一个参数，即要创建元素的标签名。
+- 要把新元素添加到文档树，可以使用 `appendChild()`、`insertBefore()`或 `replaceChild()`方法。
+
+### Text类型
+
+- nodeType 的值为 3;
+- nodeName 的值为"#text";
+- nodeValue 的值为节点所包含的文本; 
+- parentNode 是一个 Element;
+- 不支持(没有)子节点。
+
+使用下列方法可以操作节点中的文本。
+
+|    方法    |       用途     |
+|:---------:|:--------------:|
+|  `appendData(text)`   |将 text 添加到节点的末尾|
+|  `deleteData(offset, count)`   |从 offset 指定的位置开始删除 count 个字符|
+|  `insertData(offset, text)`   |在 offset 指定的位置插入 text|
+|  `replaceData(offset, count, text)`   |用 text 替换从 offset 指定的位置开始到 offset+count 为止处的文本|
+|  `splitText(offset)`   |  从 offset 指定的位置将当前文本节点分成两个文本节点|
+|  `substringData(offset, count)`   |  提取从 offset 指定的位置开始到 offset+count 为止处的字符串|
+
+- 开始与结束标签之间只要存在内容，就会创建一个文本节点。
+
+1. 创建文本节点
+
+`document.createTextNode()`
+- 这个方法接受一个参数——要插入节中的文本。
+
+2. 规范文本节点
+
+`normalize()`
+- 将相邻文本节点合并的方法
+- 如果在一个包含两个或多个文本节点的父元素上调用 `normalize()`方法，则会将所有文本节点合并成一个节点。
+
+## DOM 操作技术
+
+### 动态脚本
+
+使用`<script>`元素可以向页面中插入 JavaScript 代码
+- 一种方式是通过其 `src` 特性包含外部文件
+- 另一种方式就是用这个元素本身来包含代码。
+
+创建动态脚本也有两种方式:
+- 插入外部文件
+- 直接插入 JavaScript 代码。
+
+动态加载的外部 JavaScript 文件能够立即运行，比如下面的`<script>`元素:
+
+`<script type="text/javascript" src="client.js"></script>`
+
+### 动态样式
+
+**能够把 CSS 样式包含到 HTML 页面中的元素有两个**：
+- `<link>`元素用于包含来自外部的文件
+- `<style>`元素用于指定嵌入的样式。
+
+### 操作表格
+
+DOM为`<table>`元素添加的属性和方法:
+
+|    方法    |       用途     |
+|:---------:|:--------------:|
+|  `caption`   |保存着对`<caption>`元素(如果有)的指针|
+|  `tBodies`   |是一个`<tbody>`元素的 HTMLCollection|
+|  `tFoot`   |保存着对`<tfoot>`元素(如果有)的指针|
+|  `tHead`   |保存着对`<thead>`元素(如果有)的指针|
+|  `rows`   | 是一个表格中所有行的 HTMLCollection|
+|  `createTHead()`   |  创建`<thead>`元素，将其放到表格中，返回引用|
+|`createTFoot()`|创建`<tfoot>`元素，将其放到表格中，返回引用|
+|`createCaption()`|创建`<caption>`元素，将其放到表格中，返回引用。|
+| `deleteTHead()`|删除`<thead>`元素|
+|`deleteTFoot()`|删除`<tfoot>`元素|
+|`deleteCaption()`|删除`<caption>`元素|
+|`deleteRow(pos)`|删除指定位置的行|
+|`insertRow(pos)`|向 rows 集合中的指定位置插入一行|
+
+
+---------------------------------------------------------------------------
+
+为`<tbody>`元素添加的属性和方法如下:
+
+|    方法    |       用途     |
+|:---------:|:--------------:|
+|  `rows`   |保存着`<tbody>`元素中行的 HTMLCollection|
+|  `deleteRow(pos)`   |删除指定位置的行|
+|  `insertRow(pos)`   |向 rows 集合中的指定位置插入一行，返回对新插入行的引用。|
+
+---------------------------------------------------------------------------
+
+为`<tr>`元素添加的属性和方法如下:
+
+|    方法    |       用途     |
+|:---------:|:--------------:|
+|  `cells`   |保存着`<tr>`元素中单元格的 HTMLCollection|
+|  `deleteCell(pos)`   |删除指定位置的单元格|
+|  `insertCell(pos)`  |向 cells集合中的指定位置插入一个单元格，返回对新插入单元格的引用|
+
+
+### 使用NodeList
+
+理解 `NodeList` 及其“近亲”`NamedNodeMap` 和 `HTMLCollection`，是从整体上透彻理解 DOM 的 关键所在。这三个集合都是“动态的”;换句话说，每当文档结构发生变化时，它们都会得到更新。因此，它们始终都会保存着最新、最准确的信息。从本质上说，所有 NodeList 对象都是在访问 DOM 文档时实时运行的查询。例如，下列代码会导致无限循环:
+
+
+```javascript
+var divs = document.getElementsByTagName("div"),
+i,
+div;
+for (i=0; i < divs.length; i++){
+    div = document.createElement("div"); 
+    document.body.appendChild(div);
+}
+```
+
+如果想要迭代一个 NodeList，最好是使用 length 属性初始化第二个变量，然后将迭代器与该变 量进行比较，如下面的例子所示:
+```javascript
+var divs = document.getElementsByTagName("div"), 
+i,
+len, div;
+for (i=0, len=divs.length; i < len; i++){
+    div = document.createElement("div");
+    document.body.appendChild(div); 
+}
+```
+这个例子中初始化了第二个变量 len。由于 len 中保存着对 divs.length 在循环开始时的一个快 照，因此就会避免上一个例子中出现的无限循环问题。在本章演示迭代 NodeList 对象的例子中，使用 的都是这种更为保险的方式。
+
+一般来说，应该尽量减少访问NodeList的次数。因为每次访问 NodeList，都会运行一次基于文档的查询。所以，可以考虑将从 NodeList 中取得的值缓存起来。
