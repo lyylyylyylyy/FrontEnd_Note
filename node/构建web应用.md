@@ -225,3 +225,21 @@ HTTP1.1中引入了`ETag`来解决这个问题。<br>
 
 大体来说，根据文件内容的hash值进行缓存淘汰会更加高效，因为文件内容不一定随着Web应用的版本而更新，而内容没有更新时，版本号的改动导致的更新毫无意义，因此以文件内容形成的hash值更精准。
 
+### Basic认证
+
+Basic认证是当客户端与服务器端进行请求时，允许通过用户名和密码实现的一种身份认证方式。这里简要介绍它的原理和它在服务器端通过Node处理的流程。
+如果一个页面需要Basic认证，它会检查请求报文头中的Authorization字段的内容，该字段的值由认证方式和加密值构成.
+
+```
+$ curl -v "http://user:pass@www.baidu.com/"
+> GET / HTTP/1.1
+> Authorization: Basic dXNlcjpwYXNz
+> User-Agent: curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5
+> Host: www.baidu.com
+> Accept: */*
+```
+
+在Basic认证中，它会将用户和密码部分组合：`username + "":"" + password`。然后进行Base64编码。
+
+Basic认证有太多的缺点，它虽然经过Base64加密后在网络中传送，但是这近乎于明文，十分危险，一般只有在HTTPS的情况下才会使用。不过Basic认证的支持范围十分广泛，几乎所有的浏览器都支持它。
+
