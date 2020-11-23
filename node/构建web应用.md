@@ -243,3 +243,172 @@ $ curl -v "http://user:pass@www.baidu.com/"
 
 Basic认证有太多的缺点，它虽然经过Base64加密后在网络中传送，但是这近乎于明文，十分危险，一般只有在HTTPS的情况下才会使用。不过Basic认证的支持范围十分广泛，几乎所有的浏览器都支持它。
 
+## 数据上传
+
+Node的http模块只对HTTP报文的头部进行了解析，然后触发request事件。如果请求中还带有内容部分（如POST请求，它具有报头和内容），内容部分需要用户自行接收和解析。通过报头的`Transfer-Encoding`或`Content-Length`即可判断请求中是否带有内容，如下所示：
+
+```javascript
+var  hasBody  =  function(req)  {
+  return  'transfer-encoding'  in  req.headers  ||  'content-length'  in  req.headers;
+};
+```
+在HTTP_Parser解析报头结束后，报文内容部分会通过data事件触发。
+
+### 表单数据
+
+最为常见的数据提交就是通过网页表单提交数据到服务器端，如下所示：
+
+```html
+<form action="/upload" method="post">
+  <label for="username">Username:</label> <input type="text" name="username" id="username" />
+<br />
+  <input type="submit" name="submit" value="Submit" />
+</form>
+```
+
+默认的表单提交，请求头中的`Content-Type`字段值为`application/x-www-form-urlencoded`，后续业务中直接访问`req.body`就可以得到表单中提交的数据。
+
+### 其他格式
+
+常见的提交还有JSON和XML文件等，判断和解析他们的原理都比较相似，都是依据`Content-Type `中的值决定，其中JSON类型的值为`application/json` ，XML的值为`application/xml`。
+
+**需要注意的是，在`Content-Type`中可能还附带如下所示的编码信息：`Content-Type:  application/json;  charset=utf-8`**
+
+### 附件上传
+
+通常的表单，其内容可以通过`urlencoded`的方式编码内容形成报文体，再发送给服务器端，但是业务场景往往需要用户直接提交文件。在前端HTML代码中，特殊表单与普通表单的差异在于该表单中可以含有`file类型`的控件，以及**需要指定表单属性`enctype`为`multipart/form-data`。**
+
+```html
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="username">Username:</label> <input type="text" name="username" id="username" />
+  <label for="file">Filename:</label> <input type="file" name="file" id="file" />
+  <br />
+  <input type="submit" name="submit" value="Submit" />
+</form>
+```
+
+浏览器在遇到`multipart/form-data`表单提交时，构造的请求报文与普通表单完全不同。首先它的报头中最为特殊的如下所示：<br>
+```
+Content-Type:  multipart/form-data;  boundary=AaB03x
+Content-Length:  18231
+```
+
+它代表本次提交的内容是由多部分构成的，其中`boundary=AaB03x`指定的是每部分内容的分界符，`AaB03x`是随机生成的一段字符串，报文体的内容将通过在它前面添加`--`进行分割，报文结束时在它前后都加上`--`表示结束。另外，`Content-Length`的值必须确保是报文体的长度。
+
+一旦我们知晓报文是如何构成的，那么解析它就变得十分容易，我们将req这个流对象直接交给直接交给对应的解析方法，由解析方法自行处理上传的内容，或
+接收内容并保存在内存中，或流式处理掉。这里要介绍到的模块是`formidable`。它基于流式处理解析报文，将接收到的文件写入到系统的临时文件夹中，并**返回对应的路径**。
+
+**因此在业务逻辑中只要检查`req.body`和`req.files`中的内容即可。**
+
+### 数据上传与安全
+
+1. 内存限制
+
+在解析表单、JSON和XML部分，我们**采取的策略是先保存用户提交的所有数据，然后再解析处理，最后才传递给业务逻辑**。这种策略存在潜在的问题是，它仅仅适合数据量小的提交请求，一旦数据量过大，将发生内存被占光的情况。攻击者通过客户端能够十分容易地模拟伪造大量数据，**如果攻击者每次提交1MB的内容，那么只要并发请求数量一大，内存就会很快地被光**。
+
+要解决这个问题主要有两个方案：
+- 限制上传内容的大小，一旦超过限制，停止接收数据，并响应400状态码。
+- 通过流式解析，将数据流导向到磁盘中，Node只保留文件路径等小数据。
+
+对于上线的Web应用，添加一个上传大小限制十分有利于保护服务器，在遭遇攻击时，能镇定从容应对。
+
+2. CSRF
+
+CSRF的全称是Cross-Site Request Forgery，中文意思为**跨站请求伪造**。前文提及了服务器端与客户端通过`Cookie`来标识和认证用户，通常而言，用户通过浏览器访问服务器端的`Session ID`
+是无法被第三方知道的，但是CSRF的攻击者并不需要知道Session ID就能让用户中招。
+
+- 解决CSRF攻击的方案有添加随机值的方式。
+- 为每个请求的用户，在Session中赋予一个随机值（设置token）
+
+
+## 路由解析
+
+介绍文件路径、MVC、RESTful等路由方式。
+
+### 文件路径型
+
+1. 静态文件
+  
+URL的路径与网站目录的路径一致，无须转换，非常直观。这种路由的处理方式也十分简单，将请求路径对应的文件发送给客户端即可。
+
+2. 动态文件
+
+它的处理原理是Web服务器根据URL路径找到对应的文件，如`/index.asp`或`/index.php`，Web服务器根据文件名后缀去寻找脚本的解析器，并传入HTTP请求的上下文。
+
+以下是Apache中配置PHP支持的方式：<br>
+
+`AddType  application/x-httpd-php  .php`
+
+解析器执行脚本，并输出响应报文，达到完成服务的目的。现今大多数的服务器都能很智能地根据后缀同时服务动态和静态文件。这种方式在Node中不太常见，主要原因是文件的后缀都是`.js`，分不清是后端脚本，还是前端脚本，这可不是什么好的设计。而且Node中Web服务器与应用业务脚本是一体的，无须按这种方式实现。
+
+### MVC
+
+用户请求的URL路径原来可以跟具体脚本所在的路径没有任何关系。<br>
+MVC模型的主要思想是将业务逻辑按职责分离，主要分为以下几种。
+- 控制器（Controller），一组行为的集合。 
+- 模型（Model），数据相关的操作和封装。 
+- 视图（View），视图的渲染。
+这是目前最为经典的分层模式（如图8-3所示），大致而言，它的工作模式如下说明。
+- 路由解析，根据URL寻找到对应的控制器和行为。
+- 行为调用相关的模型，进行数据操作。
+- 数据操作结束后，调用视图和相关数据进行页面渲染，输出到客户端。
+
+如何根据URL做路由映射，这里有两个分支实现。
+- 一种方式是通过手工关联映射，一种是自然关联映射。
+- 前者会有一个对应的路由文件来将URL映射到对应的控制器，后者没有这样的文件。
+
+![图8-3 分层模式](img/8-3.png)
+
+1. 手工映射
+
+手工映射除了需要手工配置路由较为原始外，它对URL的要求十分灵活，几乎没有格式上的限制。如下的URL格式都能自由映射：
+
+```
+/user/setting
+/setting/user
+```
+
+- 正则匹配
+
+有些请求需要根据不同的用户显示不同的内容，假如系统中存在成千上万个用户，我们就不太可能去手工维护所有用户的路由请求，因此正则匹配应运而生，我们期望通过以下的方式就可以匹配到任意用户：
+
+```
+use('/profile/:username', function (req, res) {
+  // TODO
+});
+```
+
+- 参数解析
+
+将匹配到的内容抽取出来，希望在业务中能如下这样调用：
+```
+use('/profile/:username',  function  (req,  res)  { 
+  var  username  =  req.params.username;
+  //  TODO
+});
+```
+
+至此，我们除了从查询字符串（`req.query`）或提交数据（`req.body`）中取到值外，还能从路径的映射里取到值.
+
+2. 自然映射
+
+简单而言，它将如下路径进行了划分处理：
+
+`/controller/action/param1/param2/param3`
+
+以`/user/setting/12/1987`为例，它会按约定去找`controllers`目录下的`user`文件，将其`require`出来后，调用这个文件模块的`setting()`方法，而其余的值作为参数直接传递给这个方法。
+
+### RESTful
+
+URL也可以设计得很规范，请求方法也能作为逻辑分发的单元。
+
+REST的全称是Representational State Transfer，中文含义为**表现层状态转化**。符合REST规范的设计，我们称为RESTful设计。它的设计哲学主要**将服务器端提供的内容实体看作一个资源，并表现在URL上**。
+
+它将`DELETE`和`PUT`请求方法引入设计中，参与资源的操作和更改资源的状态。
+
+在RESTful设计中，资源的具体格式由请求报头中的`Accept`字段和服务器端的支持情况来决定。如果客户端同时接受JSON和XML格式的响应，那么它的`Accept`字段值是如下这样的：<br>
+`Accept:  application/json,application/xml`
+
+靠谱的服务器端应该要顾及这个字段，然后根据自己能响应的格式做出响应。在响应报文中，通过`Content-Type`字段告知客户端是什么格式，如下所示：`Content-Type:  application/json`
+
+
