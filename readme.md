@@ -185,10 +185,10 @@
 - [x] [函数表达式](./JavaScript高级程序设计/函数表达式.md)<br>
 - [x] [BOM](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [x] [客户端检测](./JavaScript高级程序设计/客户端检测.md)<br>
-- [ ] [](./JavaScript高级程序设计/DOM.md)<br>
+- [x] [DOM](./JavaScript高级程序设计/DOM.md)<br>
+- [x] [DOM扩展](./JavaScript高级程序设计/DOM扩展.md)<br>
+- [ ] [DOM2和DOM3](./JavaScript高级程序设计/DOM2和DOM3.md)<br>
 <!-- - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
 - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br> -->
 
