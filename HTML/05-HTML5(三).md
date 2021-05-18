@@ -30,7 +30,7 @@
 
 （2）容量较大，sessionStorage 约5M、localStorage 约20M。
 
-（3）只能存储字符串，可以将对象 JSON.stringify() 编码后存储。
+（3）**只能存储字符串**，可以将对象 JSON.stringify() 编码后存储。
 
 
 ### 常见 API

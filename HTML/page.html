@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文档标题</title>
+</head>
+<body>
+	<div id="container">
+		<!--图片-->
+		<ul id="banner">
+	
+			  <li>
+				<a href="#">
+					<img src="http://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/BvuVioborejroaq.png">  
+					<!--为了实现无缝自动轮播：第一张插入图片5-->
+					<!--最后一张之后，插入图片1-->
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="https://i-ogp.pximg.net/imgaz/upload/20200916/751208791.jpg">
+				</a>
+			</li>
+	
+			<li>
+				<a href="#">
+					<img src="https://imgs.ali213.net/Spe/2021/02/03/20210203105327994.jpg">
+				</a>
+			</li>
+	
+			<li>
+				<a href="#">
+					<img src="https://image.diyiyou.com/game/202003/24/1585031568_4.jpg">
+				</a>
+			</li>
+	
+			<li>
+				<a href="#">
+					<img src="https://image.gameapps.hk/images/202010/10/fe48d1a02fa893ce.jpg">
+				</a>
+			</li>
+	
+			<li>
+				<a href="#">
+					<img src="http://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/BvuVioborejroaq.png">
+				</a>
+			</li>
+	
+			  <li>
+				<a href="#">
+					<img src="https://i-ogp.pximg.net/imgaz/upload/20200916/751208791.jpg"><!--最后一张之后，插入图片1-->
+				</a>
+			</li>
+	
+	
+		</ul>
+	
+		<!--伴随移动的小圆点-->
+		<div id="buttons">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+			<span index="4"></span>
+			<span index="5"></span>
+		</div>
+		<a href="javascript:;" id="prev" class="arrow">&lt;</a>  <!--向左-->
+		<a href="javascript:;" id="next" class="arrow">&gt;</a>  <!--向右-->
+	</div>
+</body>
+</html>
+
+<style>
+#banner li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#banner{
+    position: absolute;
+
+}
+
+#banner li{
+    float: left;
+}
+
+#banner li img{
+	width: 200px;
+	height: 150px;
+    display: block;
+}
+
+
+/*设置父元素定位*/
+#container{
+    position: relative; /*为了给左右按钮 和小圆点*/
+}
+
+
+/*小圆点*/
+#buttons{
+    position: absolute; /*小圆点绝对定位*/
+    height: 10px;
+    width: 100px;
+    bottom: 20px;  /*距离底部20px*/
+    left: 50%;  /*左右居中显示*/
+    z-index: 100;
+}
+
+#buttons span{
+    cursor: pointer;
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /*设置成圆*/
+    background: #333;
+    margin-right: 5px;
+}
+
+#buttons .on{
+    background: orangered;
+}
+
+/*左右按钮*/
+.arrow{
+    cursor: pointer;
+    display: none;  /*设置暂时不显示*/
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 200;
+    top: 180px;
+    background: RGBA(0,0,0,.3);  /*背景透明度*/
+    color: #fff;
+}
+
+#prev{
+    left: 20px;
+}
+
+#next{
+    right: 20px;
+}
+
+ #container:hover .arrow {
+     display: block;
+ }
+</style>

@@ -48,9 +48,9 @@ HTML标签通常是成对出现的（<font color="blue">**双边标记**</font>�
 ### 1、文档声明头
 
 
-任何一个标准的HTML页面，第一行一定是一个以`<!DOCTYPE ……>`开头的语句。
+任何一个标准的HTML页面，第一行一定是一个以`<!DOCTYPE ……>`开头的语句。h5仅规定了一种。
 
-这一行，就是文档声明头，*DocType Declaration*，简称DTD。此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范。`<!DOCTYPE ……>`是严格模式。
+这一行，就是文档声明头，*DocType Declaration*，简称DTD。**此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范**。`<!DOCTYPE ……>`是严格模式。
 
 #### HTML4.01有哪些规范呢？
 
@@ -73,7 +73,7 @@ HTML4.01里面规定了**普通**和**XHTML**两大种规范。HTML觉得自己�
 
 在sublime输入的html:xt，x表示XHTML，t表示transitional。
 
-在HTML5中极大的简化了DTD，也就是说HTML5中就没有XHTML了：
+**在HTML5中极大的简化了DTD，也就是说HTML5中就没有XHTML了**：
 
 ```
 <!DOCTYPE html>

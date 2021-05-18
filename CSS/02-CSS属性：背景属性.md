@@ -6,6 +6,7 @@
 - `background-color:#ff99ff;`  设置元素的背景颜色。
 
 - `background-image:url(images/2.gif);` 将图像设置为背景。
+- [渐变](https://www.runoob.com/css3/css3-gradients.html)
 
 -  `background-repeat: no-repeat;`  设置背景图片是否重复及如何重复，默认平铺满。（重要）
 	- `no-repeat`不要平铺；
@@ -185,7 +186,7 @@ PS:所有用`#`开头的值，都是16进制的。
 
 **关于设置透明度的其他方式：**
 
-（1）`opacity: 0.3;` 会将整个盒子及子盒子设置透明度。也就是说，当盒子设置半透明的时候，会影响里面的子盒子。
+（1）`opacity: 0.3;` 会将整个盒子及子盒子设置透明度。也就是说，当盒子设置半透明的时候，会影响里面的子盒子，opacity属性指定了一个元素的不透明度。换言之，opacity属性指定了一个元素后面的背景的被覆盖程度。一个元素和它包含的子元素都会具有和元素背景相同的透明度，哪怕这个元素和它的子元素有不同的opacity属性值。
 
 （2）`background: transparent;` 可以单独设置透明度，但设置的是完全透明（不可调节透明度）。
 
@@ -348,7 +349,7 @@ background属性和border一样，是一个综合属性，可以将多个属性�
 
 - 径向渐变：从一个**中心点**开始沿着**四周**产生渐变效果。radial-gradient
 
-- 重复渐变。linear-gradient-repeat
+- 重复渐变。repeating-linear-gradient
 
 ### 线性渐变
 

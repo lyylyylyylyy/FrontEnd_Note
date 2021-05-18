@@ -503,7 +503,7 @@ css3中引入了一个新的单位vw/vh，与**视图窗口有关**，**vw表示
     padding-right:300px;
 }
 .container div{
-    postion:relative;
+    position:relative;
     float:left;
 }
 .middle{
