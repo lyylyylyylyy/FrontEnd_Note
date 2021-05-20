@@ -103,18 +103,9 @@
 
 # 二、JS高级
 
-## JS作用域与作用域链
-
-## JS闭包
-
-## JS异步/事件循环机制
-
 - [x] [事件循环](./JS高级/02-事件循环.md)<br>
-
-
-## Cookie
-
 - [x] [cookie...待续](./JS高级/01-cookie.md)<br>
+- [x] [预编译](./JS高级/预编译.md)<br>
 
 ## ES7新特性
 
@@ -155,11 +146,7 @@
 - [x] [Class的继承](./ES6/23-Class的继承.md)<br>
 - [x] [Module的语法](./ES6/24-Module的语法.md)<br>
 - [x] [Module的加载实现](./ES6/25-Module的加载实现.md)<br>
-<!-- - [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br>
-- [ ] [](./ES6/02-ES6：promise、async等.md)<br> -->
+
 
 
 > 摘自：https://es6.ruanyifeng.com/, 此内容仅作个人学习整理。
@@ -188,9 +175,7 @@
 - [x] [DOM](./JavaScript高级程序设计/DOM.md)<br>
 - [x] [DOM扩展](./JavaScript高级程序设计/DOM扩展.md)<br>
 - [ ] [DOM2和DOM3](./JavaScript高级程序设计/DOM2和DOM3.md)<br>
-<!-- - [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br>
-- [ ] [](./JavaScript高级程序设计/第3章-基本概念.md)<br> -->
+
 
 
 # 四、前端核心高级
@@ -281,62 +266,18 @@
 
 <br>
 
-# 七、前台交互
-
-## Ajax
-
-## 新型Ajax请求方式：fetch
-
-## REST API
-
-## 跨域全面解决方案
-
-## mock后台数据接口的库：Mock.js/EasyMock
-
-## 接口调试：postman
-
-## 基于promise封装原生Ajax
-
-## axios源码
-
-## 基于promise实现axios封装及二次迭代
+# 七、TypeScript
 
 <br>
 
-# 八、TypeScript
-
-<br>
-
-# 九、跨平台开发
+# 八、跨平台开发
 
 ## 微信小程序开发
 
-## mpvue
-
-## react-native
-
-## MUI
-
-## ionic
+# 九、手写系列
 <br>
 
-# 十、底层原理
-
-## 自定义promise
-
-## 自定义axios
-
-## 自定义EventBus
-
-## 自定义react，vue
-
-## 自定义实现lodash方法
-<br>
-
-# 十一、手动实现
-<br>
-
-# 十二、计算机网络
+# 十、计算机网络
 
 - [x] [计算机网络概述](./计算机网络/计算机网络概述.md)<br>
 - [x] [网络应用](./计算机网络/网络应用.md)<br>
@@ -345,19 +286,26 @@
 - [ ] [计算机网络面试题](./计算机网络/计算机网络面试题.md)<br>
 <br>
 
-# 十三、面试题集锦
+# 十一、interview
 
 
 - 计算机网络
   - [ ] [DNS解析、TCP连接、HTTP](./interview/InternetNetwork/01-DNS解析、TCP连接、HTTP.md)<br>
   - [x] [HTTP1.0和HTTP2.0的区别](./interview/InternetNetwork/02-http1.0和http2.0的区别.md)<br>
+  - [x] [object整理](./revision/object整理.md)<br>
+  - [x] [js输入输出](./revision/js输入输出.md)<br>
+  - [x] [JSON](./revision/JSON.md)<br>
+  - [x] [JS手写系列](./revision/JS手写系列.md)<br>
+  - [x] [高级技巧](./revision/高级技巧.md)<br>
+  - [x] [函数整理](./revision/函数整理.md)<br>
+  - [x] [面试整理](./revision/面试整理.md)<br>
+  - [x] [ajax](./revision/ajax.md)<br>
+  - [x] [BOM](./revision/BOM.md)<br>
+  - [x] [DOM](./revision/DOM.md)<br>
+  - [x] [exercise](./revision/exercise.js)<br>
 
 
 
-
-
-
-  
 - [ ] [前端面试(一)](./interview/01-前端面试题目.md)<br>
 
 
@@ -370,16 +318,7 @@
 
 - JavaScript
   - [x] [隐式类型转换](./interview/JavaScript/01-隐式类型转换.md)<br>
- 
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
-- [ ] [](./JS高级/01-ES6新特性.md)<br>
+
 
 ## 数据结构
 
