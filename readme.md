@@ -303,6 +303,7 @@
   - [x] [BOM](./revision/BOM.md)<br>
   - [x] [DOM](./revision/DOM.md)<br>
   - [x] [exercise](./revision/exercise.js)<br>
+  - [ ] [事件整理](./revision/事件整理.md)<br>
 
 
 
