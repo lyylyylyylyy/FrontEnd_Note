@@ -289,7 +289,20 @@ Function.proptotype.myCall = function(context = window, ...args) {
 
 11. 用ES5实现数组的map方法
 
-- 传入的参数有哪些
-```javascript
+- 传入的参数有哪些，返回的值是一个数组
+- 不会改变原来的数组
+- `array.map(function(currentValue,index,arr), thisValue)`
+  - thisValue可选。对象作为该执行回调时使用，传递给函数，用作 "this" 的值。如果省略了 thisValue，或者传入 null、undefined，那么回调函数的 this 为全局对象。
 
+```javascript
+Array.prototype.myMap = function(fn, context) {
+    var arr = Array.prototype.slice.call(this);//由于是ES5所以就不用...展开符了,通过this获取原数组
+    var mappedArr = [];
+    for (var i = 0; i < arr.length; i++ ){
+      mappedArr.push(fn.call(context, arr[i], i, this));
+    }
+    return mappedArr;
+}
 ```
+
+12. 用ES5实现数组的reduce方法
