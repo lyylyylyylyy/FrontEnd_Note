@@ -286,3 +286,10 @@ Function.proptotype.myCall = function(context = window, ...args) {
     return res;
 }
 ```
+
+11. 用ES5实现数组的map方法
+
+- 传入的参数有哪些
+```javascript
+
+```
