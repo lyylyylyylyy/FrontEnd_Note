@@ -132,7 +132,7 @@ num(); //输出4,
   person1.sayHi() //hi
 ```
 
-1. promise.all和promise.race
+5. promise.all和promise.race
 
 ```javascript
 promise2.all = function(arr) {
@@ -256,6 +256,9 @@ addTask(400, "4");
 
 9. 手写bind
 
+- 对于普通函数，绑定this指向
+- 对于构造函数，要保证原函数的原型对象上的属性不能丢失
+- bind返回的是一个对象
 ```javascript
 Function.prototype.bind = function(context, ...args) {
     let self = this;//谨记this表示调用bind的函数
@@ -268,3 +271,18 @@ Function.prototype.bind = function(context, ...args) {
 }
 ```
 
+10. 手写call/apply
+
+思路: 利用this的上下文特性。
+
+```javascript
+Function.proptotype.myCall = function(context = window, ...args) {
+    let func = this;
+    let fn = Symbol("fn");
+    context[fn] = func;
+
+    let res = context[fn](...args, "fn"); //重点代码，利用this指向，相当于context.caller(...args)
+    delete context[fn];
+    return res;
+}
+```
