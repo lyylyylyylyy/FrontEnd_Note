@@ -170,6 +170,7 @@ promise2.race = function(arr) {
 
 6. instanceof
 
+- 原型链的向上查找
 ```javascript
 function myinstanceof(leftValue, rightValue) {
   var rightproto = rightValue.prototype;
@@ -289,7 +290,7 @@ Function.proptotype.myCall = function(context = window, ...args) {
 
 11. 用ES5实现数组的map方法
 
-- 传入的参数有哪些，返回的值是一个数组
+- 传入的参数有哪些，返回的值是一个【数组】
 - 不会改变原来的数组
 - `array.map(function(currentValue,index,arr), thisValue)`
   - thisValue可选。对象作为该执行回调时使用，传递给函数，用作 "this" 的值。如果省略了 thisValue，或者传入 null、undefined，那么回调函数的 this 为全局对象。
@@ -299,10 +300,57 @@ Array.prototype.myMap = function(fn, context) {
     var arr = Array.prototype.slice.call(this);//由于是ES5所以就不用...展开符了,通过this获取原数组
     var mappedArr = [];
     for (var i = 0; i < arr.length; i++ ){
-      mappedArr.push(fn.call(context, arr[i], i, this));
+      mappedArr.push(fn.call(context, arr[i], i, this)); // 通过call来在context中执行fn这个回调函数
     }
     return mappedArr;
 }
 ```
 
 12. 用ES5实现数组的reduce方法
+
+- `array.reduce(function(total, currentValue, currentIndex, arr), initialValue)`
+- 传入的参数，以及返回值是什么【返回计算结果】
+- 没有传入初始值怎么处理
+
+```javascript
+Array.prototype.myReduce = function(fn, initialValue) {
+    // 获取数组
+    var arr = Array.prototype.slice.call(this);
+    var res = initialValue ? initialValue : arr[0];
+    var startIndex = initialValue ? 0 : 1;
+
+    for (var i = startIndex; i < arr.length; i++) {
+        res = fn.call(null, res, arr[i], i, this);    // 通过call来执行fn函数
+    }
+    return res;
+}
+```
+
+13. 实现Object.create方法
+
+- Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__
+- `Object.create(proto，[propertiesObject])`，返回一个新对象
+
+```javascript
+function create(proto) {
+    function F() {};
+    F.prototype = proto;
+    F.prototype.constructor = F;
+
+    return new F();
+}
+```
+
+14. 实现new关键字
+
+- 创建一个全新的对象，这个对象的__proto__要指向构造函数的原型对象
+- 执行构造函数
+- 返回值为object类型则作为new方法的返回值返回，否则返回上述全新对象
+
+```javascript
+function myNew(fn, ...args) {
+    let instance = Object.create(fn.prototype);    // 以构造函数的原型来创建一个新的对象/实例，绑定原型对象
+    let res = fn.apply(instance, args);    // 执行构造函数
+    return typeof res === 'object' ? res: instance;
+}
+```
