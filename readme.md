@@ -289,21 +289,22 @@
 # 十一、interview
 
 
-- 计算机网络
-  - [ ] [DNS解析、TCP连接、HTTP](./interview/InternetNetwork/01-DNS解析、TCP连接、HTTP.md)<br>
-  - [x] [HTTP1.0和HTTP2.0的区别](./interview/InternetNetwork/02-http1.0和http2.0的区别.md)<br>
-  - [x] [object整理](./revision/object整理.md)<br>
-  - [x] [js输入输出](./revision/js输入输出.md)<br>
-  - [x] [JSON](./revision/JSON.md)<br>
-  - [x] [JS手写系列](./revision/JS手写系列.md)<br>
-  - [x] [高级技巧](./revision/高级技巧.md)<br>
-  - [x] [函数整理](./revision/函数整理.md)<br>
-  - [x] [面试整理](./revision/面试整理.md)<br>
-  - [x] [ajax](./revision/ajax.md)<br>
-  - [x] [BOM](./revision/BOM.md)<br>
-  - [x] [DOM](./revision/DOM.md)<br>
-  - [x] [exercise](./revision/exercise.js)<br>
-  - [ ] [事件整理](./revision/事件整理.md)<br>
+
+- [ ] [DNS解析、TCP连接、HTTP](./interview/InternetNetwork/01-DNS解析、TCP连接、HTTP.md)<br>
+- [x] [HTTP1.0和HTTP2.0的区别](./interview/InternetNetwork/02-http1.0和http2.0的区别.md)<br>
+- [x] [object整理](./revision/object整理.md)<br>
+- [x] [js输入输出](./revision/js输入输出.md)<br>
+- [x] [JSON](./revision/JSON.md)<br>
+- [x] [JS手写系列](./revision/JS手写系列.md)<br>
+- [x] [高级技巧](./revision/高级技巧.md)<br>
+- [x] [函数整理](./revision/函数整理.md)<br>
+- [x] [面试整理](./revision/面试整理.md)<br>
+- [x] [ajax](./revision/ajax.md)<br>
+- [x] [BOM](./revision/BOM.md)<br>
+- [x] [DOM](./revision/DOM.md)<br>
+- [x] [exercise](./revision/exercise.js)<br>
+- [x] [事件整理](./revision/事件整理.md)<br>
+- [x] [h5脚本编程](./revision/h5脚本编程.md)<br>
 
 
 
