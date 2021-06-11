@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class='title'>将左侧模块移动到右侧对应位置完成拼图</div>
+
+        <!--拼图模块-->
+        <div class='pos src' id='src-1'>1</div>
+        <div class='pos src' id='src-2'>2</div>
+        <div class='pos src' id='src-3'>3</div>
+
+        <!--拼图目标位置-->
+        <div class='pos dest' id='dest-1'>1</div>
+        <div class='pos dest' id='dest-2'>2</div>
+        <div class='pos dest' id='dest-3'>3</div>
+
+        <div class='success' id='success'>拼图完成</div>
+    </body>
+</html>
+<style>
+    *{
+    margin:0px;
+    padding: 0px
+}
+html{
+    height: 100%
+}
+body{
+    height: 100%;
+    min-width: 300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.pos{
+    width:50px;
+    height: 50px;
+    position: absolute;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor:pointer;
+    user-select:none;
+}
+.dest{
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+#src-1{
+    top:50px;
+    left:10px;
+    background-color: red;
+    z-index: 100;
+}
+#src-2{
+    top:150px;
+    left:10px;
+    background-color: yellow;
+    z-index: 100;
+
+}
+#src-3{
+    top:250px;
+    left:10px;
+    background-color: green;
+    z-index: 100;
+}
+#dest-1{
+    top:250px;
+    right:10px;
+}
+#dest-2{
+    top:150px;
+    right:10px;
+}
+#dest-3{
+    top:50px;
+    right:10px;
+}
+.success {
+    line-height: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    background-color: black;
+    padding:25px;
+    display: none;
+}
+.title{
+    text-align: center;
+    font-size: 20px;
+    position:absolute;
+    top:10px;
+}
+</style>
+<script>
+drag();
+
+
+// 可能被用到的一些点 
+// element.style.top element.style.left
+// element.offsetTop element.offsetLeft
+// Math.abs
+// document.body.onmouseup
+// document.body.onmouseleave
+function drag() {
+    var srcEle_1 = document.getElementById('src-1')
+    var srcEle_2 = document.getElementById('src-2')
+    var srcEle_3 = document.getElementById('src-3')
+    var destEle_1 = document.getElementById('dest-1')
+    var destEle_2 = document.getElementById('dest-2')
+    var destEle_3 = document.getElementById('dest-3')
+    var success = document.getElementById(('success'))
+    var successNum = 0 //成功次数，三个都放上就弹出成功框
+    function MoveEle(ele) { //移动元素对象
+        this.ele = ele
+        this.mouse = {
+            mouseEleClient: { //鼠标距离该元素左上角的x和y距离
+                t: 0,
+                l: 0
+            },
+            mouseSuo: false //鼠标在元素上按下时，替换为true
+        }
+        this.isTarget = true //移动到目标位置永久锁住
+        this.offsetLeft = ele.offsetLeft //原来位置
+        this.offsetTop = ele.offsetTop //原来位置
+    }
+    MoveEle.prototype.init = function (fn) { //初始化移动元素
+        var ele = this.ele
+        var mouse = this.mouse
+        var _this = this
+        ele.onmousedown = function (e) {
+            if (_this.isTarget) {
+                e = e || window.event
+                var l = e.clientX
+                var t = e.clientY
+                mouse.mouseEleClient.t = t - this.offsetTop
+                mouse.mouseEleClient.l = l - this.offsetLeft
+                mouse.mouseSuo = true
+            }
+        }
+        ele.onmouseup = function (e) {
+            mouse.mouseSuo = false
+            fn(this.offsetTop, this.offsetLeft)
+        }
+        window.addEventListener('mousemove', function (e) {
+            if (mouse.mouseSuo) {
+                e = e || window.event
+                var l = e.clientX
+                var t = e.clientY
+                ele.style.top = t - mouse.mouseEleClient.t + 'px'
+                ele.style.left = l - mouse.mouseEleClient.l + 'px'
+            }
+        })
+    }
+    MoveEle.prototype.toTarget = function (left, top) { //移动到终点并固定
+        this.ele.style.top = ++top + 'px'
+        this.ele.style.left = ++left + 'px'
+        this.isTarget = false //锁住元素无法移动了
+    }
+    MoveEle.prototype.toOrigin = function () { //移动到原来位置
+        this.ele.style.top = this.offsetTop + 'px'
+        this.ele.style.left = this.offsetLeft + 'px'
+    }
+    function TargetEle(ele) { //目标元素对象
+        this.ele = ele
+        this.target = {
+            coincidence: 2 / 3, //连个元素重叠2/3就算成功
+            isTarget: false //元素是否已经放上
+        }
+        this.offsetTop = ele.offsetTop
+        this.offsetLeft = ele.offsetLeft
+    }
+    TargetEle.prototype.isTarget = function (t, l, w, h) { //判断是否放上了元素
+        this.ele.offsetWidth
+        var xdt = Math.abs(t - this.offsetTop)
+        var xdl = Math.abs(l - this.offsetLeft)
+        console.log(t, l)
+        h = h || this.ele.offsetHeight
+        w = w || this.ele.offsetWidth
+        var tarh = this.ele.offsetHeight - xdt
+        var tarw = this.ele.offsetWidth - xdl
+        if ((tarh * tarw) / (h * w) > this.target.coincidence && tarh > 0 && tarw > 0) {
+            this.target.isTarget = true
+            return true
+        }
+        return false
+    }
+    /////////////////////////////
+    var srcME_1 = new MoveEle(srcEle_1)
+    var desTE_1 = new TargetEle(destEle_1)
+    srcME_1.init(function (t, l) {
+        if (desTE_1.isTarget(t, l)) {
+            srcME_1.toTarget(desTE_1.offsetLeft, desTE_1.offsetTop)
+            successNum++
+            if (successNum == 3) successFn()
+        }else{
+            srcME_1.toOrigin()
+        }
+
+    })
+    var srcME_2 = new MoveEle(srcEle_2)
+    var desTE_2 = new TargetEle(destEle_2)
+    srcME_2.init(function (t, l) {
+        if (desTE_2.isTarget(t, l)) {
+            srcME_2.toTarget(desTE_2.offsetLeft, desTE_2.offsetTop)
+            successNum++
+            if (successNum == 3) successFn()
+        }else{
+            srcME_2.toOrigin()
+        }
+    })
+    var srcME_3 = new MoveEle(srcEle_3)
+    var desTE_3 = new TargetEle(destEle_3)
+    srcME_3.init(function (t, l) {
+        if (desTE_3.isTarget(t, l)) {
+            srcME_3.toTarget(desTE_3.offsetLeft, desTE_3.offsetTop)
+            successNum++
+            if (successNum == 3) successFn()
+        }else{
+            srcME_3.toOrigin()
+        }
+
+    })
+    //成功
+    function successFn() {
+        success.style.display = 'block'
+    }
+}
+
+
+</script>
