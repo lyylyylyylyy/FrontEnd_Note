@@ -1,5 +1,5 @@
 所有对象都有的属性和方法？
-- hasOwnProperty:不会遍历原型属性，只获取实例内部属性
+- hasOwnProperty:不会遍历原型属性，只获取实例内部属性`obj.hasOwnProperty(prop)`
   - 只在给定对象属性存在于对象实例中时，才会返回true
 - isPrototypeOf
   - object.isPrototypeOf(person)：如果`person.__proto__ == object`返回true
