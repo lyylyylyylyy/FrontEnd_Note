@@ -2,6 +2,21 @@
 
 nodeType、nodeName、nodeValue
 
+nodeName 属性
+- nodeName 属性规定节点的名称。
+- nodeName 是只读的
+- 元素节点的 nodeName 与标签名相同
+- 属性节点的 nodeName 与属性名相同
+- 文本节点的 nodeName 始终是 #text
+- 文档节点的 nodeName 始终是 #document
+> 注释：nodeName 始终包含 HTML 元素的大写字母标签名。
+
+nodeValue 属性
+- nodeValue 属性规定节点的值。
+- 元素节点的 nodeValue 是 undefined 或 null
+- 文本节点的 nodeValue 是文本本身
+- 属性节点的 nodeValue 是属性值
+
 DOM结构的变化能自动反映在NodeList中，转换成数组，`Array.prototype.slice.call(somenode.childNodes, 0)`
 
 - childNodes
