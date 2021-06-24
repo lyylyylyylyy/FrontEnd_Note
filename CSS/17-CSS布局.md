@@ -17,7 +17,7 @@
 
 - absolute：绝对定位。相对于父元素中最近的 relative/absolute 进行偏移，会脱离文档流。音标：[ˈæbsəluːt]。
 
-- fixed：固定定位。相对于可视区域固定，会脱离文档流。
+- fixed：固定定位。相对于可视区域固定，相对于浏览器窗口定位，会脱离文档流。
 
 `relative`、`absolute`、`fixed`这三个属性，可以结合 z-index 来设置层级。
 
@@ -280,6 +280,10 @@ border-radius不一样，**如果设置border-radius为百分比，则是相对�
 (6) line-height
 
 相对于字高
+
+(7) transform:translate(50%);
+
+相对于自身的宽高
 
 2. **百分比单位布局应用**
 
