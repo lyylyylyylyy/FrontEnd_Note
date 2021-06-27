@@ -304,6 +304,19 @@ Array.prototype.myMap = function(fn, context) {
     }
     return mappedArr;
 }
+
+
+Array.prototype.myForEach = function myForEach(callback,context){  
+    context = context || window;  
+    if('forEach' in Array.prototye) {  
+        this.forEach(callback,context);  
+        return;  
+    }  
+    //IE6-8下自己编写回调函数执行的逻辑  
+    for(var i = 0,len = this.length; i < len;i++) {  
+        callback && callback.call(context,this[i],i,this);  
+    }  
+}
 ```
 
 12. 用ES5实现数组的reduce方法

@@ -13,14 +13,15 @@
 - 一旦创建，值就不能更改
 -------------
 怎么延长作用域链？ 
-- with 
+- with 第三章
+  - 将代码的作用域设置到一个特定的对象中
 - try...catch
 
 判断数组：
 - typeOf 
 - instanceOf 
 - Array.isArray()
-- constructor?
+- constructor    // ƒ Array() { [native code] }
 - Object.prototype.toString.call(value)     // "[object, Array]"
 -------------
 
@@ -38,6 +39,14 @@ arguments：
 - 类数组，长度取决于传入的参数个数，赋值会同步给同名元素，没传入参数的参数undefined，和参数空间不同。
 - callee属性：指针，指向拥有arguments对象的函数（经典阶乘函数）。
 - `Array.prototype.slice()`将arguments转化为数组
+
+```javascript
+function a(a,b) {console.log(1);console.log(arguments)}
+
+a(1,6)
+```
+
+![caller and callee](img/caller.png)
 -------------
 alert 接受字符串作为参数，后台会调用toString方法 
 - ——《JavaScript高级程序设计》p89
